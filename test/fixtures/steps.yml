@@ -2,8 +2,8 @@
 
 one:
   direction: MyText
-  recipe: one
+  post: one
 
 two:
   direction: MyText
-  recipe: two
+  post: two
