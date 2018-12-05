@@ -1,0 +1,46 @@
+<%= bootstrap_form_for(@post) do |f| %>
+  <%= f.text_field  :title, 
+                    maxlength: 100, 
+                    placeholder: 'Title', 
+                    class: 'form-control',
+                    required: true, 
+                    minlength: 5,
+                    maxlength: 100 %>
+  <%= f.hidden_field :branch, :value => @branch %>
+  <%= f.text_area :content, 
+                  rows: 6,
+                  required: true, 
+                  minlength: 20,
+                  maxlength: 1000,
+                  placeholder: 'Describe what you are looking for. E.g. specific recipes, basic level, etc.', 
+                  class: 'form-control' %>
+  <h3>Add Ingredients</h3>
+   <%= f.nested_fields_for :ingredients do |ingredient| %>
+   <%= ingredient.text_field :description, class: "form-control" %>
+   <%= ingredient.remove_nested_fields_link %>
+   <% end %>
+   <%= f.add_nested_fields_link :ingredients %>                
+   
+   <h1>Preparation Steps</h1>
+   <%= f.nested_fields_for :steps do |step| %>
+   <%= step.text_field :direction, class: "form-control" %>
+   <%= step.remove_nested_fields_link %>
+   <% end %>
+   <%= f.add_nested_fields_link :steps %>
+   
+ 
+   <!--< %= f.file_field :image %>-->
+   <!--< % if @post.image? %>-->
+   <!--< %= image_tag @post.image.url, class: "post-show" %>-->
+   <!--< %= f.check_box :remove_image %> -->
+   <!--< % end %>-->
+   
+   <!--<div class="field">-->
+   <!--    < %= f.label :image %>-->
+   <!--    < %= f.file_field :image, direct_upload: true %>-->
+   <!--</div>-->
+
+  <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
+ 
+  <%= f.submit "Create a Recipe", class: 'form-control' %>
+<% end %>

@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(@post) do |f| %>
+<div class="container new-post">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Create a new recipe</h1>
+        <%= render 'posts/new/post_form', post: @post %>
+        <%= link_to 'Show Recent Recipes', posts_path %>
+        <!--< %= link_to 'Go to Home Page'%>-->
+    </div>
+  </div>
+</div>
+<% end %>

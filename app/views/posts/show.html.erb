@@ -1,0 +1,29 @@
+<div id="single-post-content" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <!--< %= image_tag(@post.image) %>-->
+      <div class="posted-by"> Recipe Added by <%= @post.user.name %></div>
+      <h3><%= @post.title %></h3>
+      <p><%= @post.content %></p>
+      <h3>Ingredients</h3>
+<ul>
+<% for @ingredient in @post.ingredients %>
+  <li>
+    <%= @ingredient.description %>
+  </li>
+<% end %>
+</ul>
+
+<h3>Steps</h3>
+<ol>
+<% for @step in @post.steps %>
+  <li><%= @step.direction %> </li>
+<% end %>
+</ol>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+    </div>
+  </div><!-- row -->
+</div>

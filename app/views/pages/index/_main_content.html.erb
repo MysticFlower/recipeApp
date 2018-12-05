@@ -1,0 +1,19 @@
+<div id="main-content" class="col-sm-9">
+  <h3 class="page-name"><%= link_to 'vegetarian', vegetarian_posts_path %></h3>
+  <div class="row">
+    <%= render @vegetarian_posts %>
+    <%= render no_posts_partial_path(@vegetarian_posts) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'non_vegetarian', non_vegetarian_posts_path %></h3>
+  <div class="row">
+    <%= render @non_vegetarian_posts %>
+    <%= render no_posts_partial_path(@non_vegetarian_posts) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'vegan', vegan_posts_path %></h3>
+  <div class="row">
+    <%= render @vegan_posts %>
+    <%= render no_posts_partial_path(@vegan_posts) %>
+  </div><!-- row -->
+</div>
