@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end 
   
-def show
+def show  
     @posts = Post.find(params[:id])
 end
   def new
@@ -16,9 +16,13 @@ end
   end
  # GET /recipes/1/edit
   def create
+     @user = current_user
     @post = Post.new(post_params)
      respond_to do |format|
       if @post.save
+
+        PostMailer.post_created(@user).deliver
+
         format.html { redirect_to @post, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else

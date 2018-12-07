@@ -50,6 +50,8 @@ gem 'sprockets'
 gem 'font-awesome-sass'
 gem 'httparty'
 
+gem 'mail', '~> 2.7', '>= 2.7.1'
+
 #for loripsm
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
