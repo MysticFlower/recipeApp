@@ -20,8 +20,8 @@ module RecipeApp
     ActionMailer::Base.smtp_settings = {
     :address => 'smtp.mandrillapp.com',
     :port => '587',
-    :user_name => "Student",
-    :password => "KuzYSZFDRMQ42JAnY8LaVw",
+    :user_name => "",
+    :password => "",
     :authentication => :plain,
     :enable_starttls_auto => true 
 }
