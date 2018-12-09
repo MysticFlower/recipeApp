@@ -88,6 +88,7 @@ group :test do
   #to clean database after test 
   gem 'database_cleaner'
   gem 'poltergeist', '~> 1.18', '>= 1.18.1'
+  # gem 'factory_girl_sequences', '~> 4.9'
 end
 
 

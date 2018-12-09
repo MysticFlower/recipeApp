@@ -1,5 +1,6 @@
 require 'navigation_helper.rb'
 module ApplicationHelper
-  include NavigationHelper
-  include PostsHelper
+	# the pages are for navigation pages and posting recipe
+	include NavigationHelper
+	include PostsHelper
 end

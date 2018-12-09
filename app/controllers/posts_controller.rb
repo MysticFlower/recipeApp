@@ -16,8 +16,8 @@ end
   end
  # GET /recipes/1/edit
   def create
-     @user = current_user
-    @post = Post.new(post_params)
+    @user = current_user
+    @post = @user.posts.new(post_params)
      respond_to do |format|
       if @post.save
 
@@ -51,7 +51,7 @@ end
       end
     end
   end
-  
+  #delete the recipe
   def destroy
     @post.destroy
     respond_to do |format|
@@ -59,7 +59,7 @@ end
       format.json { head :no_content }
     end
   end
-  
+  # calling the branches to perform an action
   def vegetarian
     posts_for_branch(params[:action])
   end
@@ -75,6 +75,7 @@ end
 #retrive all categories at specific branch and pagination is used for chaining and query with active record 
 #displaying page links 
 private
+#white listing the below attributes
   def post_params
   params.require(:post).permit(:image, :content, :title, :category_id, ingredients_attributes:[:id, :description, :_destroy], steps_attributes:[:id, :direction, :_destroy])
                        .merge(user_id: current_user.id)
@@ -89,7 +90,7 @@ end
   #     :description, :image, ingredients_attributes:[:id, :content, :_destroy], 
   #     steps_attributes:[:id, :direction, :_destroy]
   # end
-
+# pagination will allow to navigate to other pages
 respond_to do |format|
   format.html
   format.js { render partial: 'posts/posts_pagination_page' }

@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   resources :categories
   #resources :recipes 
   resources :posts do
+    resources :comments 
+
+      
   collection do
     get 'vegetarian'
     get 'non_vegetarian'
     get 'vegan'
   end
      resources :likes
+     
 end
     
   

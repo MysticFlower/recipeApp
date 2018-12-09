@@ -5,6 +5,8 @@ class PostsForBranchService
     @branch = params[:branch]
   end
 
+  # this is the code for searching with different types using if else conditions
+  #this is service design pattern to put code at one place so that the code is easy to test.
   # get posts depending on the request
   def call
     if @category.blank? && @search.blank?

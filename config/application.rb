@@ -17,14 +17,7 @@ module RecipeApp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    ActionMailer::Base.smtp_settings = {
-    :address => 'smtp.mandrillapp.com',
-    :port => '587',
-    :user_name => "",
-    :password => "",
-    :authentication => :plain,
-    :enable_starttls_auto => true 
-}
+   
 #    ActionMailer::Base.smtp_settings = {
 #     :address => 'smtp.gmail.com',
 #     :domain => 'mail.google.com',

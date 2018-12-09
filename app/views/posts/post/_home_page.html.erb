@@ -1,4 +1,5 @@
 <div class="col-sm-3 single-post-card" id=<%= post_path(post.id) %>>
+  <!-- home page where the posted recipes are shown with title name -->
   <div class="card">
     <div class="card-block">
       <h4 class="post-text">
@@ -6,9 +7,12 @@
       </h4>
       <div class="post-content">
         <div class="posted-by">Posted by <%= post.user.name %></div>
-        <!--<h3>< %= post.title %></h3> -->
         <p><%= post.content %></p>
         <!--< %= link_to "I'm interested", post_path(post.id), class: 'interested' %>-->
+<!--        <h2> Comments</h2>
+           < %= render @post.comment %>
+          <br>
+       < %= render "comments/form" %> -->
       </div>
     </div>
   </div><!-- card -->
