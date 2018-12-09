@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   # this sends an welcome email when user first sign up
  	def welcome_email
     	@user = params[:user]
-    	@url  = 'http://example.com/login'
+    	@url  = 'https://recipeapp-mysticflower.herokuapp.com'
     	mail(to: @user.email, subject: 'Welcome to My Awesome Site')
  	end
 end
