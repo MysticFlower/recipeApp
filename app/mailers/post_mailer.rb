@@ -5,7 +5,7 @@ class PostMailer < ApplicationMailer
   		mail(to: user.email,
   		from: "service@mydomain.com",
   		subject: "thanks!",
-  		body: "this is my first mailer"
+  		body: "Comment has Created on your post"
   		)
 	end
 end
