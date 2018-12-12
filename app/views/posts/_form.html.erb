@@ -14,18 +14,15 @@
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific recipes, basic level, etc.', 
                   class: 'form-control' %>
-  <h3>Add Ingredients</h3>
+  <h4>Add Ingredients</h4>
    <%= f.nested_fields_for :ingredients do |ingredient| %>
-   <%= ingredient.text_field :description, class: "form-control" %>
-   <%= ingredient.remove_nested_fields_link %>
-   <% end %>
-   <%= f.add_nested_fields_link :ingredients %>                
-   
-   <h1>Preparation Steps</h1>
+   <%= ingredient.text_field :description, class: "form-control" %><%= ingredient.remove_nested_fields_link "Remove", :class => "remove" %>
+   <% end %><br>
+   <%= f.add_nested_fields_link :ingredients %>                 
+   <h4>Preparation Steps</h4>
    <%= f.nested_fields_for :steps do |step| %>
-   <%= step.text_field :direction, class: "form-control" %>
-   <%= step.remove_nested_fields_link %>
-   <% end %>
+   <%= step.text_field :direction, class: "form-control" %> <%= step.remove_nested_fields_link "Remove", :class => "remove"%>
+   <% end %><br>
    <%= f.add_nested_fields_link :steps %>
    
    <!--< %= f.file_field :image %>-->

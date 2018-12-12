@@ -1,34 +1,32 @@
 <div id="single-post-content" class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <!--< %= image_tag(@post.image) %>-->
-      <div class="posted-by"> Recipe Added by <%= @post.user.name %></div>
-      <h3><%= @post.title %></h3>
-      <p><%= @post.content %></p>
-      <h3>Ingredients</h3>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <!--< %= image_tag(@post.image) %>-->
+    <div class="posted-by"> Recipe Added by <%= @post.user.name %></div>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.content %></p>
+    <h3>Ingredients</h3>
 <ul>
 <% for @ingredient in @post.ingredients %>
-  <li>
-    <%= @ingredient.description %>
-  </li>
+<li>
+  <%= @ingredient.description %>
+</li>
 <% end %>
 </ul>
 
 <h3>Steps</h3>
 <ol>
 <% for @step in @post.steps %>
-  <li><%= @step.direction %> </li>
+<li><%= @step.direction %> </li>
 <% end %>
 </ol>
-<h2>Comments</h2>
-
 <!-- <div class="posted-by">Posted by < = @post.user.name %></div> --> 
-    <%= render @post.comments %>
-    <br>
-        <%= render "comments/form" %>
+  <%= render @post.comments %>
+  <br>
+      <%= render "comments/form" %>
+<span><button type="button" class="btn btn-dark"><%= link_to 'Edit', edit_post_path(@post) %></button></span>
+<span><button type="button" class="btn btn-dark"><%= link_to 'Back', posts_path %></button></span>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-    </div>
-  </div><!-- row -->
+  </div>
+</div><!-- row -->
 </div>

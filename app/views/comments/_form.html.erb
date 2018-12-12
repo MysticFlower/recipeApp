@@ -1,8 +1,20 @@
+<!-- < %= form_for([@post, @post.comments.build]) do |f| %> -->
+
+<div class="form-group">
 <%= form_for([@post, @post.comments.build]) do |f| %>
+<label for="comment">Comment:</label>
 
-  <%= f.text_area :content %>
+<%= f.text_area :content, class: 'form-control'  %>
+<br>
+	
+<div class="actions">
+<%= f.submit "Create a comment", class: 'form-control' %>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<!-- <div class="actions">
+<%= f.submit %>
+</div> -->
 <% end %>
+
+</div>
