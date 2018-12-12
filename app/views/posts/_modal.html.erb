@@ -22,8 +22,12 @@
                
 
 <!-- <span><button type="button" class="btn btn-dark">< %= link_to 'Show', @post, :class=>"btn btn-dark"%></button></span> -->
-<%= link_to 'Show', @post %>
+<% if user_signed_in? %>
+<%= link_to 'Show', posts_path %>
+<% end %>
+<% if !user_signed_in? %>
             <%= link_to "I'm Interested" , login_path %>
+            <% end %>
             </div>
           </div><!-- loaded-data -->
         </div><!-- modal-body -->
