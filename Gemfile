@@ -10,7 +10,7 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 #Use BootStrap-Sass
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'nested_form_fields', '~> 0.8.2'
 gem 'faker', '~> 1.9', '>= 1.9.1'
 # carrierwave for images 
