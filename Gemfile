@@ -15,7 +15,7 @@ gem 'nested_form_fields', '~> 0.8.2'
 gem 'faker', '~> 1.9', '>= 1.9.1'
 # carrierwave for images 
 gem 'carrierwave', '~> 0.11.2'
-gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'mini_magick', '~> 4.9'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 #gem bootstrapform 
 gem 'bootstrap_form'
