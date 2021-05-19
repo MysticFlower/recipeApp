@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 #Use BootStrap-Sass
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'nested_form_fields', '~> 0.8.2'
